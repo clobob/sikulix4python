@@ -12,7 +12,7 @@ def addImagePath(*path):
     if len(path) == 0:
         import inspect
         stack = inspect.stack()
-        aPath = os.path.dirname(stack[1].filename)
+        aPath = os.path.split(os.path.abspath(stack[1].filename))[0]
         SXImagePath.setBundlePath(aPath)
         print("setBundlePath:", aPath)
     else:
